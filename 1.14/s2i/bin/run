@@ -11,7 +11,7 @@ source ${NGINX_CONTAINER_SCRIPTS_PATH}/common.sh
 
 process_extending_files ${NGINX_APP_ROOT}/src/nginx-start ${NGINX_CONTAINER_SCRIPTS_PATH}/nginx-start
 if [ ! -v NGINX_LOG_TO_VOLUME -a -v NGINX_LOG_PATH ]; then
-    test -e ${NGINX_LOG_PATH}/access.log || /bin/ln -sf /dev/stdout ${NGINX_LOG_PATH}/access.log
+    # test -e ${NGINX_LOG_PATH}/access.log || /bin/ln -sf /dev/stdout ${NGINX_LOG_PATH}/access.log
     /bin/ln -sf /dev/stderr ${NGINX_LOG_PATH}/error.log
 fi
 
